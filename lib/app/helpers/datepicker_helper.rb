@@ -9,6 +9,10 @@ module JqueryDatepicker
     def datepicker_input(object_name, method, options = {})
       datepicker(object_name, method, options)
     end
+    
+    def datetimepicker_input(object_name, method, options = {})
+      datetimepicker(object_name, method, options)
+    end
   
   end
 end
