@@ -70,11 +70,11 @@ class JqueryDatepicker::InstanceTag < ActionView::Helpers::InstanceTag
 
   def format_date(tb_formatted, format)
     new_format = translate_format(format)
-    Date.parse(tb_formatted).strftime(new_format)
+    tb_formatted.blank? ? "" : Date.parse(tb_formatted).strftime(new_format)
   end
   def format_time(tb_formatted, format)
     new_format = translate_time_format(format)
-    DateTime.parse(tb_formatted).strftime(new_format)
+    tb_formatted.blank? ? "" : DateTime.parse(tb_formatted).strftime(new_format)
   end
 
   # Method that translates the datepicker date formats, defined in (http://docs.jquery.com/UI/Datepicker/formatDate)
